@@ -32,7 +32,7 @@ Next, construct team RegistrationLoginController. Add a left bar button, as a na
 
 Finally, build our app’s MainController team, adding a ‘log out’ button associated to function ‘logout.’
 
-<img src="Swifty Snacks 105/image15.png">
+<img src="Swifty Snacks 105/image5.png">
 
 To enable our ‘quarterback’ to lead, we must empower its teammates to reference his leadership when required. We will define this means of reference as an extension to AppDelegate.
 
