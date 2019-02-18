@@ -16,4 +16,4 @@ Stan’s approach is to build separate UINavigation stacks for each of the app�
 
 Time to build out an illustrative example. Start a single view project, then delete that storyboard business (see Swifty Snacks 101). Rename the ‘boilerplate’ ViewController.swift file to RootController.swift, then in the AppDelegate’s didFinishLaunchingWithOptions set the app window’s rootViewController as RootController.
 
-<img src="">
+<img src="Swifty Snacks 105/image1.png">
