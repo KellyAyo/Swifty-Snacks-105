@@ -32,49 +32,49 @@ Next, construct team RegistrationLoginController. Add a left bar button, as a na
 
 Finally, build our app’s MainController team, adding a ‘log out’ button associated to function ‘logout.’
 
-<img src="Swifty Snacks 105/image5.png">
+<img src="Swifty Snacks 105/image6.png">
 
 To enable our ‘quarterback’ to lead, we must empower its teammates to reference his leadership when required. We will define this means of reference as an extension to AppDelegate.
 
-<img src="Swifty Snacks 105/image6.png">
+<img src="Swifty Snacks 105/image7.png">
 
 We can now call-out to our ‘quarterback’ (aka rootViewController) from anywhere within the app. Great, now return to RootController to give it the tools to manage its newfound responsibilities.
 
 The intention is to set our ‘quarterback’ as a parent view that will add the appropriate child, as instructed. Use a private variable to set a reference to the current child view controller.
 
-<img src="Swifty Snacks 105/image7.png">
+<img src="Swifty Snacks 105/image8.png">
 
 Address xCodes concern by adding a initialiser to the class.
 
-<img src="Swifty Snacks 105/image8.png">
+<img src="Swifty Snacks 105/image9.png">
 
 Next, allow xCode to add the required init(coder), press into the warning and select ‘fix.’ Within viewDidLoad() we can now set the current view controller, which will start out being an instance of our SplashController class, as RootController’s child. Set the child’s view.frame to equal that of its parent’s view.bounds. We do this so that the child’s frame act in step with its parent view, when UI changes occur e.g. the in-call status bar is invoked. Add the child as a subview then complete the process by calling didMove(toParent: self), which must be called ‘after the view controller is added or removed from a container view controller.’
 
-<img src="Swifty Snacks 105/image9.png">
+<img src="Swifty Snacks 105/image10.png">
 
 We can now build out three new functions, within RootController, to be used by our quarterback to change the current viewcontroller on display: namely, showRegistrationLoginScreen() & showMainScreen().
 
 Consider showRegistrationLoginScreen(). In part 1 we add an instance of RegistrationLoginController() as our quarterback’s child. Notice that RegistrationLoginController() is embeded as the root of a new UINavigationController — do not confuse this root with our app’s rootViewController, aka quarterback. Part 2 deals with installing the quarterback’s child as its current view controller i.e. that which it will display to the user — out with the old, in with the new.
 
-<img src="Swifty Snacks 105/image10.png">
+<img src="Swifty Snacks 105/image11.png">
 
 Proceed to build out showMainScreen(), in accordance with the structure of showRegistrationLoginScreen().
 
-<img src="Swifty Snacks 105/image11.png">
+<img src="Swifty Snacks 105/image12.png">
 
 So far so good. To wrap up, let’s ‘walk through’ the user journey, adding code to inform the quarterback which view controllers should be displayed according to current session status.
 
 Our freshly installed app will tell its quarterback (RootController) to display an instance of SplashController(). SplashController() will fake a call to an external service. Here, an if / else statement, leveraging NSUserDefaults, will determine what course of action is to be taken, based on session status. If the user is ‘LOGGED_IN’ the app’s quarterback will be instructed to show the MainScreen (aka MainController). Otherwise, the quarterback will be tasked to show the RegistrationLoginController. The initial session status is ‘LOGGED_IN’ = false, so the RegistrationLoginController is displayed.
 
-<img src="Swifty Snacks 105/image12.png">
+<img src="Swifty Snacks 105/image13.png">
 
 The RegistrationLoginController will assume that registration has succeeded and set the session status to ‘LOGGED_IN’ = true, before instructing the app’s quarterback to show an instance of MainController().
 
-<img src="Swifty Snacks 105/image13.png">
+<img src="Swifty Snacks 105/image14.png">
 
 Lastly, the app’s MainController will set the session status back to ‘LOGGED_IN’ = false and show, via our quarterback, RegistrationLoginController if the user chooses to logout.
 
-<img src="Swifty Snacks 105/image14.png">
+<img src="Swifty Snacks 105/image15.png">
 
 Thank you & goodnight!
 
