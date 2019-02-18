@@ -71,3 +71,11 @@ Our freshly installed app will tell its quarterback (RootController) to display 
 The RegistrationLoginController will assume that registration has succeeded and set the session status to ‘LOGGED_IN’ = true, before instructing the app’s quarterback to show an instance of MainController().
 
 <img src="Swifty Snacks 105/image13.png">
+
+Lastly, the app’s MainController will set the session status back to ‘LOGGED_IN’ = false and show, via our quarterback, RegistrationLoginController if the user chooses to logout.
+
+<img src="Swifty Snacks 105/image14.png">
+
+Thank you & goodnight!
+
+“Occasionally, a good idea comes to you first, if you’re lucky. Usually, it only comes after a lot of bad ideas.” — Alex Blumberg
